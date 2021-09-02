@@ -1,0 +1,12 @@
+#button {
+  font-size: large;
+  font-weight: 500;
+}
+
+#display-spinner {
+  display: none;
+}
+
+#show-text-output{
+  display: none;
+}

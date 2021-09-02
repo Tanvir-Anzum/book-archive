@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- bootstrap link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We"
+      crossorigin="anonymous"
+    />
+
+    <!-- css link -->
+    <link rel="stylesheet" href="weather.css" />
+  </head>
+  <body>
+    <h1 class="text-center my-3">my weather app</h1>
+    <div class="d-flex justify-content-center mb-3 my-5">
+      <div class="input-group w-50">
+        <input
+          type="text"
+          class="form-control border border-2"
+          placeholder="Search by city name"
+          aria-label="search"
+          aria-describedby="basic-addon2"
+          id="search"
+        />
+      </div>
+
+      <button
+        type="button"
+        id="button"
+        class="btn btn-primary"
+        onclick="loadData()"
+      >
+        Search
+      </button>
+    </div>
+    <div id="display-spinner" class="text-center my-5 w-100">
+        <strong>Loading...</strong>
+        <div class="spinner-border ms-5" role="status" aria-hidden="true"></div>
+      </div>
+    
+      <div id="show-text-output" class="text-center text-danger my-5">
+       
+      </div>
+      
+   <div class="container-fluid">
+    <div id="show" class="row row-cols-5 my-5">
+      
+    </div>
+   </div>
+    <!-- JS link -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- connected to weather.js -->
+    <script src="weather.js"></script>
+  </body>
+</html>
