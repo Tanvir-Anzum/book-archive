@@ -23,7 +23,6 @@ const loadData = () => {
 const display = (inputArray, inputValue) => {
    
   console.log(inputArray)
-  console.log(inputArray.length, inputValue)
   if (inputArray.length === 0 && inputValue !== '') {
     showTextOutput.innerHTML = `<h2>No results found</h2>`
     showTextOutput.style.display = 'block'
@@ -32,6 +31,7 @@ const display = (inputArray, inputValue) => {
   if (inputArray.length !== 0 && inputValue !== '') {
     showTextOutput.innerHTML = `<h2>${inputArray.length} results found</h2>`
     showTextOutput.style.display = 'block'
+    displaySpinner.style.display = 'none'
   }
   let i = 0
   inputArray.forEach(input => {
@@ -40,7 +40,7 @@ const display = (inputArray, inputValue) => {
     const div = document.createElement('div')
     div.innerHTML = `<div class="col mt-3">
     <div class='card' style='width: 21rem;height: 520px; border: 2px solid black'>
-      <img height="410px" src='https://covers.openlibrary.org/b/id/${input.cover_i}-M.jpg' class='card-img-top' alt='...' />
+    <img  height="410px" src='https://covers.openlibrary.org/b/id/${input.cover_i}-M.jpg' class='card-img-top' alt='...' />
       <div class='card-body'>
       <div class="d-flex">
         <h6 id="firstOutput" class='card-title me-4'>book name: ${input.title}</h6>
@@ -51,9 +51,8 @@ const display = (inputArray, inputValue) => {
     </div>
     </div>
     `
-    show.appendChild(div)
+  show.appendChild(div)
   }
-    if (i === 1)
-     displaySpinner.style.display = 'none'
+    
   })
 }
