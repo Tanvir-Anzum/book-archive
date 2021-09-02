@@ -1,7 +1,10 @@
+
+// necessary variables
 const show = document.getElementById('show')
 const displaySpinner = document.getElementById('display-spinner')
 const showTextOutput = document.getElementById('show-text-output')
 
+// function for loading data
 const loadData = () => {
   let searchResult = document.getElementById('search')
   let result = searchResult.value
@@ -13,29 +16,38 @@ const loadData = () => {
     showTextOutput.style.display = 'block'
     displaySpinner.style.display = 'none'
   }  
-  // show.appendChild(displaySpinner)
+
+  // fectching data
   fetch(`https://openlibrary.org/search.json?q=${result}`)
     .then((res) => res.json())
     .then((data) => display(data.docs, result))
 
   searchResult.value = ''
 }
+
+// display function 
 const display = (inputArray, inputValue) => {
-   
-  console.log(inputArray)
+
+  // checking if any result is found
   if (inputArray.length === 0 && inputValue !== '') {
     showTextOutput.innerHTML = `<h2>No results found</h2>`
     showTextOutput.style.display = 'block'
     displaySpinner.style.display = 'none'
   }
+
+  // checking how many results matched with search input
   if (inputArray.length !== 0 && inputValue !== '') {
     showTextOutput.innerHTML = `<h2>${inputArray.length} results found</h2>`
     showTextOutput.style.display = 'block'
     displaySpinner.style.display = 'none'
   }
   let i = 0
+
+  // using forEach loop to loop through array elements
   inputArray.forEach(input => {
     i++
+
+    // showing seven(7) results
     if(i<8){
     const div = document.createElement('div')
     div.innerHTML = `<div class="col mt-3">
@@ -46,13 +58,11 @@ const display = (inputArray, inputValue) => {
         <h6 id="firstOutput" class='card-title me-4'>book name: ${input.title}</h6>
         <h6 id="secondOutput" class='card-title'>author: ${input.author_name[0]}</h6>
       </div>  
-      
       </div>
     </div>
     </div>
     `
-  show.appendChild(div)
-  }
-    
+     show.appendChild(div)
+  }   
   })
 }
