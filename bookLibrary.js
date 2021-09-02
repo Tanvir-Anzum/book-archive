@@ -60,7 +60,7 @@ const display = (inputArray, inputValue) => {
        <div class='card-body'>
      <div class="d-flex">
          <h6 id="firstOutput" class='card-title me-4'>book name: ${input.title}</h6>
-         <h6 id="secondOutput" class='card-title me-4'>book name: ${input.author_name[0]}</h6>
+         <h6 id="secondOutput" class='card-title me-4'>author name: ${input.author_name[0]}</h6>
        </div>
         <h6 class='card-title me-4'>published in: ${input.publish_year[0]}
        </div>
@@ -75,7 +75,7 @@ const display = (inputArray, inputValue) => {
        <div class='card-body'>
         <div class="d-flex">
          <h6 id="firstOutput" class='card-title me-4'>book name: ${input.title}</h6>
-         <h6 id="secondOutput" class='card-title me-4'>book name: ${input.author_name[0]}</h6>
+         <h6 id="secondOutput" class='card-title me-4'>author name: ${input.author_name[0]}</h6>
         </div>
          <h6 id="secondOutput" class='card-title me-4'>published year: unavailable</h6>
        </div>
@@ -90,7 +90,7 @@ const display = (inputArray, inputValue) => {
        <div class='card-body'>
      <div class="d-flex">
          <h6 id="firstOutput" class='card-title me-4'>book name: ${input.title}</h6>
-        <h6 class='card-title me-4'>book name: ${input.publish_year[0]}
+        <h6 class='card-title me-4'>author name: ${input.publish_year[0]}
         </div>
          
      </div>
