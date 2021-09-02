@@ -68,19 +68,33 @@ const display = (inputArray, inputValue) => {
      </div>
     `
       } catch {
+        try{
         div.innerHTML = `<div class="col mt-3">
+       <div class='card' style='width: 21rem;height: 520px; border: 2px solid black'>
+       <img  height="410px" src='https://covers.openlibrary.org/b/id/${input.cover_i}-M.jpg' class='card-img-top' alt='...' />
+       <div class='card-body'>
+       <div class="d-flex">
+         <h6 id="firstOutput" class='card-title me-4'>book name: ${input.title}</h6>
+         <h6 id="secondOutput" class='card-title me-4'>book name: ${input.author_name[0]}</h6>
+       </div>
+       </div>
+     </div>
+     </div>
+    `}
+    catch{
+      div.innerHTML = `<div class="col mt-3">
      <div class='card' style='width: 21rem;height: 520px; border: 2px solid black'>
      <img  height="410px" src='https://covers.openlibrary.org/b/id/${input.cover_i}-M.jpg' class='card-img-top' alt='...' />
        <div class='card-body'>
      <div class="d-flex">
          <h6 id="firstOutput" class='card-title me-4'>book name: ${input.title}</h6>
-         <h6 id="secondOutput" class='card-title me-4'>book name: ${input.author_name[0]}</h6>
-       </div>
-       
+        <h6 class='card-title me-4'>book name: ${input.publish_year[0]}
+        </div>
        </div>
      </div>
      </div>
     `
+    }
       }
       show.appendChild(div)
     }
